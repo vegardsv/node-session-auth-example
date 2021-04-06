@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+    h1 Login
+    p #{error}
+    form(method="post") 
+    label(for="email") E-mail
+    input(type="text", name="email")
+    label(for="password") Password
+    input(type="password", name="password")
+    input(type="submit")
