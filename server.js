@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const sessions = require("client-sessions");
-
 const port = 3000;
 const app = express();
 
@@ -38,7 +37,9 @@ function loginRequired(req, res, next) {
 /* App setup */
 
 app.set("view engine", "pug");
+
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(
   sessions({
     cookieName: "session",
@@ -64,8 +65,6 @@ app.use(function (req, res, next) {
     next();
   });
 });
-
-/* routes */
 
 app.get("/", function (req, res) {
   res.render("index");
